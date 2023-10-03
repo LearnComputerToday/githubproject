@@ -9,6 +9,7 @@
     <style>
         body, html {
             height: 100%;
+            width: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -19,16 +20,22 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100%;
-            max-width: 800px; /* or any value you deem fit */
             margin: 0 auto;
+            width: 100%;
         }
 
         header {
             background-color: #f4f4f4;
-            padding: 10px 0;
-            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            width: 80%;
+            justify-content: space-between;
             text-align: center;
+        }
+        header h1 {
+            font-size: clamp(1.125rem, 0.75rem + 1.5vw, 1.875rem);
         }
 
         nav a {
@@ -40,13 +47,40 @@
         section {
             margin: 20px 0;
             text-align: center;
+            padding: 10px;
         }
-
+        #about {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+        }
+        #about .left, #about .right {
+            width: 50%;
+        }
+        #about .right {
+            display: flex;
+            align-items: center;
+            text-align: justify;
+        }
         img.profile-pic {
             width: 200px;
             height: auto;
             margin: 20px auto;
             display: block;
+        }
+        @media (max-width: 600px) {
+            #about {
+            flex-direction: column;
+            }
+            #about .left, #about .right {
+            width: 100%;
+        }
+        }
+        footer {
+            background-color: #747474;
+            width: 100%;
+            text-align: center;
+            color: #f4f4f4;
         }
     </style>
 </head>
@@ -63,11 +97,17 @@
         </header>
 
         <section id="about">
-            <h2>About Me</h2>
-            <img src="profile_image.png" alt="My profile picture" class="profile-pic">
-            <p>
-                I am Roman Arabe an aspiring Full Stack WebDeveloper currently learning web development.
-            </p>
+            <section class="left">
+                <h2>About Me</h2>
+                <img src="profile_image.png" alt="My profile picture" class="profile-pic">
+            </section>
+            <article class="right">
+                <p>
+                    I am flexible, reliable and possess excellent time keeping skills, self-motivated, responsible and hard working person. I am a mature team worker and adaptable to all challenging situations. I am able to work well both in a team environment as well as using own initiative. In Learn Computer Today(online course) I'm currently
+                    a student and keep learning to the job role of a Web Developer. Also learning additional skills from other website courses like Udemy.
+                </p>
+            </article>
+           
         </section>
 
         <section id="projects">
